@@ -1,0 +1,595 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-sky-top: #cce6ff;
+    --bg-sky-bottom: #d9b3ff;
+    --pixel-indigo: #1a1a40;
+    --pixel-pink: #ffb3d9;
+    --pixel-pink-vibrant: #ff66aa;
+    --pixel-mint: #aaffaa;
+    --pixel-yellow: #ffffaa;
+    --pixel-blue: #99ccff;
+    --pixel-lavender: #e6ccff;
+    --pixel-taskbar: #c0c0c0;
+  }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #1a1a40;
+    background: linear-gradient(180deg, #cce6ff 0%, #d9b3ff 100%);
+    background-attachment: fixed;
+    cursor: crosshair;
+  }
+
+  button, a, input, select, textarea, [role="button"] {
+    cursor: crosshair;
+  }
+}
+
+/* 8-Bit Font Utilities */
+.font-pixel {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+.font-vt {
+  font-family: 'VT323', 'Courier New', monospace;
+}
+
+.font-pixelify {
+  font-family: 'Pixelify Sans', 'Courier New', sans-serif;
+}
+
+.font-mono-clean {
+  font-family: 'Courier New', Courier, 'JetBrains Mono', monospace;
+}
+
+/* Pixel Box & Shadow Utilities from Design Specs */
+.pixel-box {
+  border: 4px solid #1a1a40;
+  box-shadow: 4px 4px 0 0 #1a1a40;
+}
+
+.pixel-box-lg {
+  border: 4px solid #1a1a40;
+  box-shadow: 8px 8px 0 0 #1a1a40;
+}
+
+.pixel-box-sm {
+  border: 2px solid #1a1a40;
+  box-shadow: 2px 2px 0 0 #1a1a40;
+}
+
+/* Win95 3D Bevel Utilities */
+.win95-outset {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+  box-shadow: inset 1px 1px 0 0 #ffffff;
+}
+
+.win95-inset {
+  background-color: #ffffff;
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+.win95-taskbar-item {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+.win95-taskbar-item-active {
+  background-color: #ffffff;
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+/* Interactive Pixel Buttons with Active Press */
+.pixel-btn {
+  border: 4px solid #1a1a40;
+  box-shadow: 4px 4px 0 0 #1a1a40;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pixel-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 0 #1a1a40;
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #1a1a40;
+}
+
+.pixel-btn-primary {
+  background-color: #aaffaa;
+  color: #1a1a40;
+}
+.pixel-btn-primary:hover {
+  background-color: #92e892;
+}
+
+.pixel-btn-pink {
+  background-color: #ff66aa;
+  color: #ffffff;
+}
+.pixel-btn-pink:hover {
+  background-color: #ff4d99;
+}
+
+.pixel-btn-yellow {
+  background-color: #ffffaa;
+  color: #1a1a40;
+}
+.pixel-btn-yellow:hover {
+  background-color: #fff880;
+}
+
+/* Subtle Pixel Grid Pattern */
+.pixel-pattern-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(26, 26, 64, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 26, 64, 0.04) 1px, transparent 1px);
+}
+
+/* CRT Scanlines Overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Floating Animations for Clouds & Pixels */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-8px) translateX(6px); }
+}
+
+@keyframes floatFast {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-12px) translateX(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatFast 4.5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #cce6ff;
+  border-left: 2px solid #1a1a40;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a40;
+  border: 1px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff66aa;
+}
+
+.pixel-box-inset {
+  border: 3px solid #1a1a40;
+  box-shadow: inset 3px 3px 0 rgba(26, 26, 64, 0.25), inset -3px -3px 0 rgba(255, 255, 255, 0.8);
+}
+
+.pixel-btn {
+  border: 3px solid #1a1a40;
+  box-shadow: 4px 4px 0 #1a1a40;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  user-select: none;
+}
+
+.pixel-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #1a1a40;
+}
+
+.pixel-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 #1a1a40;
+}
+
+.pixel-btn-primary {
+  background-color: #fff07c;
+  color: #1a1a40;
+}
+.pixel-btn-primary:hover {
+  background-color: #ffe642;
+}
+
+.pixel-btn-pink {
+  background-color: #ffb3d9;
+  color: #1a1a40;
+}
+.pixel-btn-pink:hover {
+  background-color: #ff99cc;
+}
+
+.pixel-btn-mint {
+  background-color: #88ecc0;
+  color: #1a1a40;
+}
+.pixel-btn-mint:hover {
+  background-color: #6ee6b0;
+}
+
+/* Scanline Overlay (Optional CRT feel) */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.03) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.01),
+    rgba(0, 255, 0, 0.005),
+    rgba(0, 0, 255, 0.01)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Pixel Checkered Background Pattern */
+.pixel-pattern-grid {
+  background-image: radial-gradient(#1a1a40 10%, transparent 11%);
+  background-size: 16px 16px;
+  opacity: 0.07;
+}
+
+/* Pixel Progress Bar Stripes */
+.pixel-progress-bar {
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor,
+    currentColor 12px,
+    transparent 12px,
+    transparent 16px
+  );
+}
+
+/* Pixel Clouds & Skyline */
+@keyframes float-cloud {
+  0% { transform: translateX(-10%); }
+  50% { transform: translateX(10%); }
+  100% { transform: translateX(-10%); }
+}
+
+.animate-float-slow {
+  animation: float-cloud 24s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-cloud 14s ease-in-out infinite reverse;
+}
+
+@keyframes pixel-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-pixel-blink {
+  animation: pixel-blink 1s steps(1) infinite;
+}
+
+/* Resume Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    cursor: auto !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .resume-page-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* ========================================================
+   8-BIT DARK MODE (YELLOW-ON-BROWN RETRO TERMINAL THEME)
+   ======================================================== */
+html.theme-dark body {
+  background: #1f140e !important;
+  color: #ffd700 !important;
+}
+
+html.theme-dark ::-webkit-scrollbar-track {
+  background: #19100a !important;
+  border-left: 2px solid #ffd700 !important;
+}
+
+html.theme-dark ::-webkit-scrollbar-thumb {
+  background: #ffd700 !important;
+  border: 1px solid #1f140e !important;
+}
+
+html.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: #fff07c !important;
+}
+
+/* Background grid in dark mode */
+html.theme-dark .pixel-pattern-grid {
+  background-image: radial-gradient(#ffd700 12%, transparent 13%) !important;
+  opacity: 0.15 !important;
+}
+
+/* Pixel Boxes in Dark Mode */
+html.theme-dark .pixel-box,
+html.theme-dark .pixel-box-sm,
+html.theme-dark .pixel-box-lg,
+html.theme-dark .pixel-box-inset {
+  border-color: #ffd700 !important;
+  box-shadow: 4px 4px 0 0 #120904, 4px 4px 0 0 #ffd700 !important;
+  background-color: #2b1b12 !important;
+  color: #ffd700 !important;
+}
+
+/* Universal container backgrounds in dark mode - ensure all light surfaces convert to dark brown */
+html.theme-dark .bg-white,
+html.theme-dark .bg-white\/95,
+html.theme-dark .bg-white\/90,
+html.theme-dark .bg-white\/80,
+html.theme-dark .bg-white\/60,
+html.theme-dark .bg-white\/50,
+html.theme-dark .bg-white\/40,
+html.theme-dark .bg-\[\#f8f9fa\],
+html.theme-dark .bg-\[\#fafafa\],
+html.theme-dark .bg-\[\#f9fafb\],
+html.theme-dark .bg-\[\#faf5ff\],
+html.theme-dark .bg-\[\#fffdf9\],
+html.theme-dark .bg-\[\#f7f0fa\],
+html.theme-dark .bg-gray-50,
+html.theme-dark .bg-gray-100,
+html.theme-dark .bg-gray-200,
+html.theme-dark .bg-gray-300,
+html.theme-dark .bg-slate-50,
+html.theme-dark .bg-slate-100 {
+  background-color: #2b1b12 !important;
+  color: #ffd700 !important;
+}
+
+/* Inset containers / cards within windows */
+html.theme-dark .bg-\[\#f0e6ff\],
+html.theme-dark .bg-\[\#e6ccff\]\/40,
+html.theme-dark .bg-\[\#e6ccff\]\/50,
+html.theme-dark .bg-\[\#fff07c\]\/20,
+html.theme-dark .bg-\[\#fff07c\]\/30,
+html.theme-dark .bg-\[\#88ecc0\]\/20,
+html.theme-dark .bg-\[\#88ecc0\]\/30,
+html.theme-dark .bg-\[\#ffb3d9\]\/20,
+html.theme-dark .bg-\[\#ffb3d9\]\/30,
+html.theme-dark .bg-\[\#ffb3d9\]\/40 {
+  background-color: #382317 !important;
+  color: #ffd700 !important;
+  border-color: #ffd700 !important;
+}
+
+/* Borders in dark mode */
+html.theme-dark .border-\[\#1a1a40\],
+html.theme-dark .border-black,
+html.theme-dark .border-gray-900,
+html.theme-dark .border-gray-800,
+html.theme-dark .border-gray-700,
+html.theme-dark .border-gray-400,
+html.theme-dark .border-gray-300,
+html.theme-dark .border-gray-200 {
+  border-color: #ffd700 !important;
+}
+
+/* Window headers / Primary titlebars in Dark Mode */
+html.theme-dark .bg-\[\#1a1a40\],
+html.theme-dark header.bg-white\/95 {
+  background-color: #20130b !important;
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
+}
+
+/* Text overrides in Dark Mode - ensure crisp yellow contrast */
+html.theme-dark .text-\[\#1a1a40\],
+html.theme-dark .text-black,
+html.theme-dark .text-gray-900,
+html.theme-dark .text-gray-800,
+html.theme-dark .text-gray-700,
+html.theme-dark .text-gray-600,
+html.theme-dark .text-purple-900,
+html.theme-dark .text-purple-800,
+html.theme-dark .text-purple-700,
+html.theme-dark .text-blue-900,
+html.theme-dark .text-blue-700 {
+  color: #ffeb3b !important;
+}
+
+html.theme-dark .text-gray-500,
+html.theme-dark .text-gray-400 {
+  color: #e5be4a !important;
+}
+
+/* Buttons in Dark Mode */
+html.theme-dark .pixel-btn {
+  border-color: #ffd700 !important;
+  box-shadow: 3px 3px 0 #120904, 3px 3px 0 #ffd700 !important;
+  background-color: #382317 !important;
+  color: #ffd700 !important;
+}
+
+/* Any button with a bright/light background must use dark brown text in dark mode */
+html.theme-dark .bg-[#ffd700],
+html.theme-dark .bg-[#fff07c],
+html.theme-dark .bg-[#ffe642],
+html.theme-dark .bg-yellow-300,
+html.theme-dark .bg-yellow-400 {
+  color: #1f140e !important;
+}
+
+html.theme-dark .bg-[#ffd700] *,
+html.theme-dark .bg-[#fff07c] *,
+html.theme-dark .bg-[#ffe642] * {
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn:hover {
+  background-color: #ffd700 !important;
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn:hover * {
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn-primary {
+  background-color: #ffd700 !important;
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn-primary * {
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn-primary:hover {
+  background-color: #fff07c !important;
+  color: #1f140e !important;
+}
+
+html.theme-dark .pixel-btn-pink {
+  background-color: #e65100 !important;
+  color: #ffffff !important;
+  border-color: #ffd700 !important;
+}
+
+html.theme-dark .pixel-btn-pink:hover {
+  background-color: #ff6d00 !important;
+  color: #ffffff !important;
+}
+
+html.theme-dark .pixel-btn-mint {
+  background-color: #e0a927 !important;
+  color: #1f140e !important;
+  border-color: #ffd700 !important;
+}
+
+/* Pastel badge backgrounds turn into rich brown terminal tags */
+html.theme-dark .bg-\[\#ffb3d9\],
+html.theme-dark .bg-\[\#ffb3d9\]\/50,
+html.theme-dark .bg-\[\#aaffaa\],
+html.theme-dark .bg-\[\#ffffaa\],
+html.theme-dark .bg-\[\#e6ccff\],
+html.theme-dark .bg-\[\#cce6ff\],
+html.theme-dark .bg-\[\#88ecc0\],
+html.theme-dark .bg-\[\#fff07c\] {
+  background-color: #382317 !important;
+  color: #ffd700 !important;
+  border-color: #ffd700 !important;
+}
+
+/* Window Control Buttons (_, □, ✕) */
+html.theme-dark .bg-\[\#e0e0e0\] {
+  background-color: #382317 !important;
+  color: #ffd700 !important;
+  border-color: #ffd700 !important;
+}
+
+/* Bottom Taskbar in Dark Mode */
+html.theme-dark .bg-\[\#c0c0c0\],
+html.theme-dark .bg-\[\#b0b0b0\] {
+  background-color: #241710 !important;
+  border-top-color: #ffd700 !important;
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
+}
+
+html.theme-dark .win95-taskbar-item,
+html.theme-dark .win95-outset {
+  background-color: #352115 !important;
+  border-top-color: #ffd700 !important;
+  border-left-color: #ffd700 !important;
+  border-bottom-color: #140a05 !important;
+  border-right-color: #140a05 !important;
+  color: #ffd700 !important;
+}
+
+html.theme-dark .win95-inset,
+html.theme-dark .win95-taskbar-item-active {
+  background-color: #19100a !important;
+  border-top-color: #140a05 !important;
+  border-left-color: #140a05 !important;
+  border-bottom-color: #ffd700 !important;
+  border-right-color: #ffd700 !important;
+  color: #ffd700 !important;
+}
+
+/* Form inputs in Dark Mode */
+html.theme-dark input,
+html.theme-dark textarea,
+html.theme-dark select {
+  background-color: #19100a !important;
+  color: #ffd700 !important;
+  border-color: #ffd700 !important;
+}
+
+html.theme-dark input::placeholder,
+html.theme-dark textarea::placeholder {
+  color: #aa882c !important;
+}
+
+/* Clean Document Canvas (Resume Canvas preserves high readability black-on-white printable look or adapts cleanly) */
+html.theme-dark .resume-page-container {
+  background-color: #19100a !important;
+  color: #ffeb3b !important;
+  border-color: #ffd700 !important;
+}
+
+html.theme-dark .resume-page-container * {
+  color: #ffeb3b !important;
+  border-color: #ffd700 !important;
+}
+
+html.theme-dark .resume-page-container a {
+  color: #fff07c !important;
+}
+
+/* CRT scanlines in dark mode */
+html.theme-dark .scanlines {
+  background: linear-gradient(
+    rgba(255, 215, 0, 0) 50%, 
+    rgba(25, 16, 10, 0.4) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.03),
+    rgba(25, 16, 10, 0.02),
+    rgba(255, 215, 0, 0.03)
+  ) !important;
+  background-size: 100% 4px, 6px 100% !important;
+}
+

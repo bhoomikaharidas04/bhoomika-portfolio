@@ -1,0 +1,6 @@
+{
+  "name": "BHOOMIKA OS v1.0",
+  "description": "BHOOMIKA OS v1.0 — Portfolio website for Bhoomika Haridas | Data, Technology & Automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

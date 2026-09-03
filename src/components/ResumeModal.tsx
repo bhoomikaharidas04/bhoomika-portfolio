@@ -39,7 +39,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     const resumeText = `
 BHOOMIKA HARIDAS
 Data Analytics · Business Intelligence · Technology & Automation
-Phone: ${PERSONAL_INFO.phone} | Email: ${PERSONAL_INFO.email} | Portfolio: ${PERSONAL_INFO.portfolioUrl} | LinkedIn: ${PERSONAL_INFO.linkedin} | GitHub: ${PERSONAL_INFO.github}
+Email: ${PERSONAL_INFO.email} | Portfolio: ${PERSONAL_INFO.portfolioUrl} | LinkedIn: ${PERSONAL_INFO.linkedin} | GitHub: ${PERSONAL_INFO.github}
 
 EDUCATION
 ${PERSONAL_INFO.education.institution}

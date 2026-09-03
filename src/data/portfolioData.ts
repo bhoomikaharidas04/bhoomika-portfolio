@@ -7,7 +7,6 @@ export const PERSONAL_INFO = {
   shortBio: 'Computer Science graduate building data-driven systems, workflow automations, and decision-ready analytics solutions. Experienced in translating raw data into structured pipelines, automated ETL workflows, and business intelligence dashboards across internships with BCG X, Government of India (AICTE), and ISRO SDSC-SHAR.',
   location: 'India (Open to Remote / Hybrid / Onsite)',
   email: 'bhoomikaharidas@outlook.com',
-  phone: '+91-7995296371',
   github: 'https://github.com/bhoomikaharidas04',
   githubUser: 'bhoomikaharidas04',
   linkedin: 'https://linkedin.com/in/bhoomikaharidas',

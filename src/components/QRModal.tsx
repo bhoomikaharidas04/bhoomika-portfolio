@@ -53,7 +53,6 @@ N:Haridas;Bhoomika;;;
 FN:Bhoomika Haridas
 TITLE:Data Analytics · Technology & Automation
 EMAIL;TYPE=INTERNET:${PERSONAL_INFO.email}
-TEL;TYPE=CELL:${PERSONAL_INFO.phone}
 URL:${vercelUrl}
 URL:${PERSONAL_INFO.linkedin}
 URL:${PERSONAL_INFO.github}

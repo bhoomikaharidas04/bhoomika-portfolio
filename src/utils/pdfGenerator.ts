@@ -68,7 +68,7 @@ export function generateSelectableResumePDF(): void {
   doc.setFontSize(8.5);
   doc.setTextColor(...primaryColor);
   
-  const contactText = `${PERSONAL_INFO.phone}  |  ${PERSONAL_INFO.email}  |  ${PERSONAL_INFO.portfolioDomain}  |  linkedin.com/in/${PERSONAL_INFO.linkedinUser}  |  github.com/${PERSONAL_INFO.githubUser}`;
+  const contactText = `${PERSONAL_INFO.email}  |  ${PERSONAL_INFO.portfolioDomain}  |  linkedin.com/in/${PERSONAL_INFO.linkedinUser}  |  github.com/${PERSONAL_INFO.githubUser}`;
   doc.text(contactText, pageWidth / 2, y, { align: 'center' });
   y += 4.5;
 
